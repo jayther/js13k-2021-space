@@ -50,6 +50,7 @@
     "js": {
       "files": [
         "src/js/src/Resources.js",
+        "src/js/src/utils/Directions.js",
         "src/js/src/utils/Polyfills.js",
         "src/js/src/utils/DOM.js",
         "src/js/src/input/KB.js",
@@ -69,11 +70,7 @@
         "src/js/src/graphics/CachedContainer.js",
         
         "src/js/src/play/Tiles.js",
-        "src/js/src/play/Room.js",
-        "src/js/src/play/Desk.js",
-        "src/js/src/play/World.js",
         "src/js/src/play/Player.js",
-        "src/js/src/play/Mail.js",
         "src/js/src/play/TutorialKey.js",
         
         "src/js/src/scenes/Scene.js",

@@ -3,10 +3,6 @@ function MainMenuScene() {
 
   this.time = 0;
   this.period = 2;
-  this.mailTimeMin = 0.5;
-  this.mailTimeMax = 1.5;
-  this.mailTime = Random.range(this.mailTimeMin, this.mailTimeMax);
-  this.mails = [];
 
   this.scrollingBg = new DisplayRect({
     w: SETTINGS.width,
@@ -16,9 +12,6 @@ function MainMenuScene() {
     fillScaleY: 5
   });
   this.addChild(this.scrollingBg);
-
-  this.mailLayer = new DisplayContainer();
-  this.addChild(this.mailLayer);
 
   this.robot = new DisplayImg({
     img: Resources.loadedImgs.robot,
@@ -32,7 +25,7 @@ function MainMenuScene() {
   this.addChild(this.robot);
 
   var mainTitle = new DisplayText({
-    text: 'Employee Not Found',
+    text: 'Space Game',
     font: '32px Arial',
     x: 420,
     y: 100,
@@ -136,31 +129,5 @@ MainMenuScene.prototype = extendPrototype(Scene.prototype, {
     this.robot.scaleX = 1 + Math.cos(ratio * Math.PI * 2) * 0.05;
     this.robot.scaleY = 1 + Math.sin(ratio * Math.PI * 2) * 0.05;
     this.scrollingBg.fillOffsetX -= 200 * dts;
-    this.mailLayer.x -= 200 * dts;
-
-    var i, mail;
-    for (i = 0; i < this.mails.length; i += 1) {
-      mail = this.mails[i];
-      if (mail.x + this.mailLayer.x < -200) {
-        this.mailLayer.removeChild(mail);
-        this.mails.splice(i, 1);
-        i -= 1;
-      }
-    }
-
-    this.mailTime -= dts;
-    if (this.mailTime <= 0) {
-      mail = new Mail({
-        x: -this.mailLayer.x + this.robot.x,
-        y: this.robot.y,
-        scaleX: 4,
-        scaleY: 4,
-        angle: Random.range(0, Math.PI * 2)
-      });
-      this.mails.push(mail);
-      this.mailLayer.addChild(mail);
-
-      this.mailTime = Random.range(this.mailTimeMin, this.mailTimeMax);
-    }
   }
 });

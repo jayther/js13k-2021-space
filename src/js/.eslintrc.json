@@ -24,17 +24,14 @@
     "DisplayPath": "writable",
     "Display": "writable",
     "CachedContainer": "writable",
-    "Room": "writable",
-    "World": "writable",
     "Player": "writable",
-    "Mail": "writable",
     "TutorialKey": "writable",
-    "Desk": "writable",
     "Scene": "writable",
     "MainMenuScene": "writable",
     "PlayScene": "writable",
     "PreloadScene": "writable",
     "SETTINGS": "writable",
-    "Resources": "writable"
+    "Resources": "writable",
+    "Directions": "writable"
   }
 }
