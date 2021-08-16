@@ -62,7 +62,7 @@ PlayScene.prototype = extendPrototype(Scene.prototype, {
   destroy: function () {
     this.kb.destroy();
   },
-  cycle: function (dts) {
+  step: function (dts) {
     this.player.step(dts);
   }
 });

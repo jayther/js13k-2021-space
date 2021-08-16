@@ -120,7 +120,7 @@ MainMenuScene.prototype = extendPrototype(Scene.prototype, {
     clearInterval(this.keySetInterval);
     this.kb.destroy();
   },
-  cycle: function (dts) {
+  step: function (dts) {
     this.time += dts;
 
     var current = this.time % this.period,

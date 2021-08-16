@@ -723,9 +723,7 @@ function Player(scene, settings) {
   this.scene = scene;
   this.aabb = new AABB(0, 0, 10, 10);
   this.prevAabb = new AABB(0, 0, 10, 10);
-  this.broadphase = new AABB(0, 0, 10, 10);
   this.speed = 200;
-  this.collIterations = 4;
   this.vel = {
     x: 0,
     y: 0
@@ -889,7 +887,6 @@ function Scene(main, settings) {
   DisplayContainer.call(this);
   this.main = main;
   this.settings = settings;
-  this.steppables = [];
 }
 Scene.prototype = extendPrototype(DisplayContainer.prototype, {
   create: function () {},
@@ -898,9 +895,6 @@ Scene.prototype = extendPrototype(DisplayContainer.prototype, {
     this.steppables.push(steppable);
   },
   step: function (dts) {
-    for (var i = 0; i < this.steppables.length; i += 1) {
-      this.steppables[i](dts);
-    }
   },
   _render: function (context) {
     // we don't need transformations
@@ -972,7 +966,7 @@ PlayScene.prototype = extendPrototype(Scene.prototype, {
   destroy: function () {
     this.kb.destroy();
   },
-  cycle: function (dts) {
+  step: function (dts) {
     this.player.step(dts);
   }
 });
@@ -1099,7 +1093,7 @@ MainMenuScene.prototype = extendPrototype(Scene.prototype, {
     clearInterval(this.keySetInterval);
     this.kb.destroy();
   },
-  cycle: function (dts) {
+  step: function (dts) {
     this.time += dts;
 
     var current = this.time % this.period,

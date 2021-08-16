@@ -3,9 +3,7 @@ function Player(scene, settings) {
   this.scene = scene;
   this.aabb = new AABB(0, 0, 10, 10);
   this.prevAabb = new AABB(0, 0, 10, 10);
-  this.broadphase = new AABB(0, 0, 10, 10);
   this.speed = 200;
-  this.collIterations = 4;
   this.vel = {
     x: 0,
     y: 0
