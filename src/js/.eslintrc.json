@@ -1,0 +1,40 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-unused-vars": ["warn", {"vars": "all", "args": "none", "ignoreRestSiblings": false}]
+  },
+  "globals": {
+    "extend": "writable",
+    "extendPrototype": "writable",
+    "DOM": "writable",
+    "KB": "writable",
+    "Random": "writable",
+    "JMath": "writable",
+    "AABB": "writable",
+    "Anim": "writable",
+    "AnimManager": "writable",    
+    "DisplayItem": "writable",
+    "DisplayContainer": "writable",
+    "DisplayRect": "writable",
+    "DisplayImg": "writable",
+    "DisplayText": "writable",
+    "DisplayPath": "writable",
+    "Display": "writable",
+    "CachedContainer": "writable",
+    "Room": "writable",
+    "World": "writable",
+    "Player": "writable",
+    "Mail": "writable",
+    "TutorialKey": "writable",
+    "Desk": "writable",
+    "Scene": "writable",
+    "MainMenuScene": "writable",
+    "PlayScene": "writable",
+    "PreloadScene": "writable",
+    "SETTINGS": "writable",
+    "Resources": "writable"
+  }
+}
